@@ -39,7 +39,7 @@
 @property (nonatomic, strong) NSMutableArray *capImages;
 @property (nonatomic, assign) NSInteger index;
 
-//@property (nonatomic, retain ) IFlyFaceDetector * faceDetector;
+@property (nonatomic, retain ) IFlyFaceDetector * faceDetector_IFly;
 
 @property (nonatomic, strong ) CanvasView  *viewCanvas;
 
@@ -81,14 +81,17 @@
     [self.movieWriter setHasAudioTrack:YES audioSettings:audioSettings];
 #endif
     
-    //    self.faceDetector=[IFlyFaceDetector sharedInstance];
-    //    [self.faceDetector setParameter:@"1" forKey:@"detect"];
-    //    [self.faceDetector setParameter:@"1" forKey:@"align"];
-    //
-    //    self.viewCanvas = [[CanvasView alloc] initWithFrame:self.view.frame] ;
-    //    [self.view addSubview:self.viewCanvas] ;
-    //    self.viewCanvas.backgroundColor = [UIColor clearColor] ;
+#if 0
+
+        self.faceDetector_IFly=[IFlyFaceDetector sharedInstance];
+        [self.faceDetector_IFly setParameter:@"1" forKey:@"detect"];
+        [self.faceDetector_IFly setParameter:@"1" forKey:@"align"];
     
+        self.viewCanvas = [[CanvasView alloc] initWithFrame:self.view.frame] ;
+        [self.view addSubview:self.viewCanvas] ;
+        self.viewCanvas.backgroundColor = [UIColor clearColor] ;
+#endif
+ 
     NSString *pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Movie.mp4"];
     unlink([pathToMovie UTF8String]); //如果视频存在，删掉！
     NSURL *movieURL = [NSURL fileURLWithPath:pathToMovie];
@@ -134,7 +137,7 @@
     });
 }
 
-
+#if 1
 - (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer {
     if (!_faceThinking) {
         CFAllocatorRef allocator = CFAllocatorGetDefault();
@@ -203,9 +206,7 @@
     return finalPoint;
     
 }
-
-
-#if 0
+#else
 #pragma mark -讯飞人脸识别，但是。。。GPUImage给的流解析不出人脸，技术支持也说没用适配
 - (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer {
     IFlyFaceImage* faceImage=[self faceImageFromSampleBuffer:sampleBuffer];
@@ -290,7 +291,7 @@
 
 -(void)onOutputFaceImage:(IFlyFaceImage*)faceImg{
     
-    NSString* strResult=[self.faceDetector trackFrame:faceImg.data withWidth:faceImg.width height:faceImg.height direction:(int)faceImg.direction];
+    NSString* strResult=[self.faceDetector_IFly trackFrame:faceImg.data withWidth:faceImg.width height:faceImg.height direction:(int)faceImg.direction];
     NSLog(@"result:%@",strResult);
     
     //此处清理图片数据，以防止因为不必要的图片数据的反复传递造成的内存卷积占用。
@@ -527,9 +528,11 @@
         [_elementView addSubview:_eyeImageView];
         
         
-        
+        //1秒 60帧吧
         // 定义时钟对象
         CADisplayLink *displayLink  = [CADisplayLink displayLinkWithTarget:self selector:@selector(step)];
+        //每隔6帧运行一次，1秒10次
+//        displayLink.frameInterval = 6;
         
         // 添加时钟对象到主运行循环
         [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
