@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C34419B430D1978AF85530FF8FC4F7CE'
+               BlueprintIdentifier = '3F811D474F471B42CB4F4A902B4E0070'
                BlueprintName = 'Pods-GLLoveLiveVideo'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-GLLoveLiveVideo.a'>

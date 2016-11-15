@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <GPUImage/GPUImage.h>
+//#import <GPUImage/GPUImage.h>
 
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <OpenGLES/EAGL.h>
@@ -22,11 +22,13 @@
 #import "CalculatorTools.h"
 
 
-@interface ViewController () <GPUImageVideoCameraDelegate>
+@interface ViewController () //<GPUImageVideoCameraDelegate>
 
-@property (nonatomic, strong) GPUImageVideoCamera *videoCamera;
-@property (nonatomic, strong) GPUImageUIElement *element;
-@property (nonatomic, strong) GPUImageView *filterView;
+//@property (nonatomic, strong) GPUImageVideoCamera *videoCamera;
+//@property (nonatomic, strong) GPUImageUIElement *element;
+//@property (nonatomic, strong) GPUImageView *filterView;
+//@property (nonatomic, strong) GPUImageMovieWriter *movieWriter;
+
 @property (nonatomic, strong) UIView *elementView;
 @property (nonatomic, strong) UIImageView *capImageView;
 @property (nonatomic, assign) CGRect faceBounds;
@@ -34,7 +36,6 @@
 @property (nonatomic, assign) BOOL faceThinking;
 @property (nonatomic, strong) UIView *faceView;
 
-@property (nonatomic, strong) GPUImageMovieWriter *movieWriter;
 
 @property (nonatomic, strong) NSMutableArray *capImages;
 @property (nonatomic, assign) NSInteger index;
@@ -90,7 +91,6 @@
         self.viewCanvas = [[CanvasView alloc] initWithFrame:self.view.frame] ;
         [self.view addSubview:self.viewCanvas] ;
         self.viewCanvas.backgroundColor = [UIColor clearColor] ;
-#endif
  
     NSString *pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Movie.mp4"];
     unlink([pathToMovie UTF8String]); //如果视频存在，删掉！
@@ -135,77 +135,80 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.movieWriter finishRecording];
     });
+    
+#endif
+
 }
 
 #if 1
-- (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer {
-    if (!_faceThinking) {
-        CFAllocatorRef allocator = CFAllocatorGetDefault();
-        CMSampleBufferRef sbufCopyOut;
-        CMSampleBufferCreateCopy(allocator,sampleBuffer,&sbufCopyOut);
-        [self performSelectorInBackground:@selector(grepFacesForSampleBuffer:) withObject:CFBridgingRelease(sbufCopyOut)];
-    }
-    
-}
-
-- (void)grepFacesForSampleBuffer:(CMSampleBufferRef)sampleBuffer{
-    _faceThinking = YES;
-    
-    CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    CIImage *image = [CIImage imageWithCVPixelBuffer:pixelBuffer];
-    image = [image imageByApplyingTransform:CGAffineTransformMakeRotation(-M_PI/2.0)];
-    CGPoint origin = [image extent].origin;
-    image = [image imageByApplyingTransform:CGAffineTransformMakeTranslation(-origin.x, -origin.y)];
-    
-    NSArray *features = [self.faceDetector featuresInImage:image];
-    
-    CIFaceFeature* faceFeature = features.firstObject;
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        if(faceFeature.hasLeftEyePosition && faceFeature.hasRightEyePosition) {
-            
-            CGPoint leftEyePosition =faceFeature.leftEyePosition;
-            CGPoint rightEyePosition =faceFeature.rightEyePosition;
-            
-            CGPoint point = CGPointMake(leftEyePosition.x + (rightEyePosition.x-leftEyePosition.x)/2, leftEyePosition.y + (rightEyePosition.y-leftEyePosition.y)/2);
-            
-            self.eyeImageView.hidden = NO;
-            self.eyeImageView.layer.position =[self verticalFlipFromPoint:point inSize:image.extent.size toSize:self.view.bounds.size];
-        }else{
-            self.eyeImageView.hidden = YES;
-        }
-    });
-    
-    _faceThinking = NO;
-    
-}
-
-
--(CGRect)verticalFlipFromRect:(CGRect)originalRect inSize:(CGSize)originalSize toSize:(CGSize)finalSize{
-    CGRect finalRect = originalRect;
-    finalRect.origin.y = originalSize.height - finalRect.origin.y - finalRect.size.height;
-    CGFloat hRate = finalSize.width / originalSize.width;
-    CGFloat vRate = finalSize.height / originalSize.height;
-    finalRect.origin.x *= hRate;
-    finalRect.origin.y *= vRate;
-    finalRect.size.width *= hRate;
-    finalRect.size.height *= vRate;
-    return finalRect;
-    
-}
-
-- (CGPoint)verticalFlipFromPoint:(CGPoint)originalPoint inSize:(CGSize)originalSize toSize:(CGSize)finalSize{
-    CGPoint finalPoint = originalPoint;
-    finalPoint.y = originalSize.height - finalPoint.y;
-    CGFloat hRate = finalSize.width / originalSize.width;
-    CGFloat vRate = finalSize.height / originalSize.height;
-    finalPoint.x *= hRate;
-    finalPoint.y *= vRate;
-    finalPoint.x = self.view.bounds.size.width - finalPoint.x;
-    return finalPoint;
-    
-}
+//- (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer {
+//    if (!_faceThinking) {
+//        CFAllocatorRef allocator = CFAllocatorGetDefault();
+//        CMSampleBufferRef sbufCopyOut;
+//        CMSampleBufferCreateCopy(allocator,sampleBuffer,&sbufCopyOut);
+//        [self performSelectorInBackground:@selector(grepFacesForSampleBuffer:) withObject:CFBridgingRelease(sbufCopyOut)];
+//    }
+//    
+//}
+//
+//- (void)grepFacesForSampleBuffer:(CMSampleBufferRef)sampleBuffer{
+//    _faceThinking = YES;
+//    
+//    CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+//    CIImage *image = [CIImage imageWithCVPixelBuffer:pixelBuffer];
+//    image = [image imageByApplyingTransform:CGAffineTransformMakeRotation(-M_PI/2.0)];
+//    CGPoint origin = [image extent].origin;
+//    image = [image imageByApplyingTransform:CGAffineTransformMakeTranslation(-origin.x, -origin.y)];
+//    
+//    NSArray *features = [self.faceDetector featuresInImage:image];
+//    
+//    CIFaceFeature* faceFeature = features.firstObject;
+//    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        
+//        if(faceFeature.hasLeftEyePosition && faceFeature.hasRightEyePosition) {
+//            
+//            CGPoint leftEyePosition =faceFeature.leftEyePosition;
+//            CGPoint rightEyePosition =faceFeature.rightEyePosition;
+//            
+//            CGPoint point = CGPointMake(leftEyePosition.x + (rightEyePosition.x-leftEyePosition.x)/2, leftEyePosition.y + (rightEyePosition.y-leftEyePosition.y)/2);
+//            
+//            self.eyeImageView.hidden = NO;
+//            self.eyeImageView.layer.position =[self verticalFlipFromPoint:point inSize:image.extent.size toSize:self.view.bounds.size];
+//        }else{
+//            self.eyeImageView.hidden = YES;
+//        }
+//    });
+//    
+//    _faceThinking = NO;
+//    
+//}
+//
+//
+//-(CGRect)verticalFlipFromRect:(CGRect)originalRect inSize:(CGSize)originalSize toSize:(CGSize)finalSize{
+//    CGRect finalRect = originalRect;
+//    finalRect.origin.y = originalSize.height - finalRect.origin.y - finalRect.size.height;
+//    CGFloat hRate = finalSize.width / originalSize.width;
+//    CGFloat vRate = finalSize.height / originalSize.height;
+//    finalRect.origin.x *= hRate;
+//    finalRect.origin.y *= vRate;
+//    finalRect.size.width *= hRate;
+//    finalRect.size.height *= vRate;
+//    return finalRect;
+//    
+//}
+//
+//- (CGPoint)verticalFlipFromPoint:(CGPoint)originalPoint inSize:(CGSize)originalSize toSize:(CGSize)finalSize{
+//    CGPoint finalPoint = originalPoint;
+//    finalPoint.y = originalSize.height - finalPoint.y;
+//    CGFloat hRate = finalSize.width / originalSize.width;
+//    CGFloat vRate = finalSize.height / originalSize.height;
+//    finalPoint.x *= hRate;
+//    finalPoint.y *= vRate;
+//    finalPoint.x = self.view.bounds.size.width - finalPoint.x;
+//    return finalPoint;
+//    
+//}
 #else
 #pragma mark -讯飞人脸识别，但是。。。GPUImage给的流解析不出人脸，技术支持也说没用适配
 - (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer {
