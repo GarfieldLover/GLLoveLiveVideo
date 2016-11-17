@@ -90,12 +90,12 @@
 
 - (void)dropViewDidBeginRefreshing:(ODRefreshControl *)refreshController {
     
-    double delayInSecinds = 3.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSecinds * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^{
+//    double delayInSecinds = 3.0;
+//    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSecinds * NSEC_PER_SEC);
+//    dispatch_after(popTime, dispatch_get_main_queue(), ^{
         [refreshController endRefreshing];
         [self loadData];
-    });
+//    });
 }
 
 #pragma mark ---- <数据源方法>

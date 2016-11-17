@@ -231,7 +231,8 @@ static int padding = 30;
             if(_self.startLiveButton.selected){
                 [_self.startLiveButton setTitle:@"结束直播" forState:UIControlStateNormal];
                 LFLiveStreamInfo *stream = [LFLiveStreamInfo new];
-                stream.url = @"rtmp://daniulive.com:1935/live/stream238";
+                stream.url = @"rtmp://10.2.130.88/live/livestream";
+                //rtmp://10.2.130.88/rtmplive/livestream
                 [_self.session startLive:stream];
             }else{
                 [_self.startLiveButton setTitle:@"开始直播" forState:UIControlStateNormal];

@@ -73,6 +73,8 @@
     _backBtn.hidden = YES;
     _middleView.hidden = YES;
     
+    [_myTitle resignFirstResponder];
+    
 }
 
 @end

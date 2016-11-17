@@ -136,7 +136,7 @@
 - (void)goPlaying {
     
     //获取url
-    self.url = [NSURL URLWithString:_liveUrl];
+    self.url = [NSURL URLWithString:@"http://10.2.130.88:8080/live/livestream.flv"];
     _player = [[IJKFFMoviePlayerController alloc] initWithContentURL:self.url withOptions:nil];
     
     UIView *playerview = [self.player view];
