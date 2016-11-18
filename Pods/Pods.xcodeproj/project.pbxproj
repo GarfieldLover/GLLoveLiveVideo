@@ -552,6 +552,13 @@
 			remoteGlobalIDString = 9DC8D9E02903E93BD0B2FEC9D846EA20;
 			remoteInfo = Masonry;
 		};
+		58809B511DDEFD8100B2F111 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58809B4D1DDEFD8100B2F111 /* KSYLiveDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B2B1A31BE8F0D900E0CC85;
+			remoteInfo = KSYLiveDemo;
+		};
 		AE066DE3D916B756CDAF09B74784CD7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -756,6 +763,7 @@
 		57B7BAADC61394AED68B4ACE7E9604ED /* GPUImageSourceOverBlendFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageSourceOverBlendFilter.h; path = LFLiveKit/Vendor/GPUImage/GPUImageSourceOverBlendFilter.h; sourceTree = "<group>"; };
 		580B10BF64272E4D4C480C8710972955 /* GPUImageOpacityFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageOpacityFilter.m; path = LFLiveKit/Vendor/GPUImage/GPUImageOpacityFilter.m; sourceTree = "<group>"; };
 		584B14089E645360D921B8A159816A68 /* GPUImageSolidColorGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageSolidColorGenerator.h; path = LFLiveKit/Vendor/GPUImage/GPUImageSolidColorGenerator.h; sourceTree = "<group>"; };
+		58809B4D1DDEFD8100B2F111 /* KSYLiveDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KSYLiveDemo.xcodeproj; path = ../KSYLive_iOS/demo/KSYLiveDemo.xcodeproj; sourceTree = "<group>"; };
 		58AB9F7054771F317346EA8CA8C9E608 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		5962B9630B4570613BD6A610A2B47EF8 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "SDWebImage/UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		5962EEF0CA4A969226C1097867E40F56 /* GPUImageBilateralFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageBilateralFilter.m; path = LFLiveKit/Vendor/GPUImage/GPUImageBilateralFilter.m; sourceTree = "<group>"; };
@@ -1313,6 +1321,14 @@
 			name = Reachability;
 			sourceTree = "<group>";
 		};
+		58809B4E1DDEFD8100B2F111 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58809B521DDEFD8100B2F111 /* KSYLiveDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		760DB66A306338EE5A21D404353596AE /* Serialization */ = {
 			isa = PBXGroup;
 			children = (
@@ -1341,6 +1357,7 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
+				58809B4D1DDEFD8100B2F111 /* KSYLiveDemo.xcodeproj */,
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				EB57DDB3388FBC701046A1E93218737F /* Frameworks */,
 				D069823A19C9DD61F0604C716D8B7339 /* Pods */,
@@ -2357,6 +2374,12 @@
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
 			productRefGroup = D203443A81BBB049CEB46B8585E62FCC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 58809B4E1DDEFD8100B2F111 /* Products */;
+					ProjectRef = 58809B4D1DDEFD8100B2F111 /* KSYLiveDemo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9E033EDB5EC0819481B0546434FA577B /* AFNetworking */,
@@ -2368,6 +2391,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		58809B521DDEFD8100B2F111 /* KSYLiveDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = KSYLiveDemo.app;
+			remoteRef = 58809B511DDEFD8100B2F111 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0068413C89BADAAF4691AA78AFE62C3E /* Sources */ = {
