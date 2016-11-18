@@ -18,6 +18,8 @@
 
 @property (nonatomic, strong)NSString * portrait;
 
+@property (nonatomic, strong)NSString * roomid;
+
 @property (nonatomic, assign)int  online_users;
 
 @property (nonatomic, strong)NSString * url;

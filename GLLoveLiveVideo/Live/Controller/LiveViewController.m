@@ -9,9 +9,7 @@
 #import "LiveViewController.h"
 #import "UIBarButtonItem+Item.h"
 #import "UIView+XJExtension.h"
-#import "AttentionViewController.h"
 #import "HotViewController.h"
-#import "NewViewController.h"
 #import "SearchViewController.h"
 
 static NSString * const ID = @"CELL";
@@ -66,31 +64,21 @@ static NSString * const ID = @"CELL";
 #pragma mark - 添加所有的子控制器
 - (void)setupAllChildViewController {
    
-    //关注
-    AttentionViewController *attenVc = [[AttentionViewController alloc] init];
-    attenVc.title = @"关注";
-    [self addChildViewController:attenVc];
-    
     //热门
     HotViewController *hotVc = [[HotViewController alloc] init];
     hotVc.title = @"热门";
     [self addChildViewController:hotVc];
-    
-    //最新
-    NewViewController *newVc = [[NewViewController alloc] init];
-    newVc.title = @"最新";
-    [self addChildViewController:newVc];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (_isInitial == NO) {
-        // 添加标题
-        [self setupAllTitle];
-        _isInitial = YES;
-    }
+//    if (_isInitial == NO) {
+//        // 添加标题
+//        [self setupAllTitle];
+//        _isInitial = YES;
+//    }
 
 }
 

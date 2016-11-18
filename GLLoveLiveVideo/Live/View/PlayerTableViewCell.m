@@ -114,9 +114,9 @@
     }
     
     // 用户Image
-    [_iconImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://img.meelive.cn/%@",playerModel.portrait]]];
+    [_iconImage sd_setImageWithURL:[NSURL URLWithString:playerModel.portrait]];
     // 封面Image
-    [_coverImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://img.meelive.cn/%@",playerModel.portrait]]];
+    [_coverImage sd_setImageWithURL:[NSURL URLWithString:playerModel.portrait]];
     
     // 观看人数
     _peopleNumber.text = [NSString stringWithFormat:@"%d",playerModel.online_users];

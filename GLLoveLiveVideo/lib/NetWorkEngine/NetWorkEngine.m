@@ -30,7 +30,7 @@
 // 异步Post数据请求
 - (void)AFJSONPostRequest:(NSString *)urlString
 {
-    NSString * str = [[NSString stringWithFormat:@"%@",urlString]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString * str = [NSString stringWithFormat:@"%@",urlString];
     NSLog(@"%@",str);
     // 格式
     NSDictionary *dic = @{@"format":@"json"};
@@ -52,13 +52,13 @@
 // 同步Get数据请求
 - (void)AfJSONGetRequest:(NSString *)urlString
 {
-    NSString * str = [[NSString stringWithFormat:@"%@",urlString]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString * str = [NSString stringWithFormat:@"%@",urlString];
     NSDictionary * dic = @{@"format":@"json"};
     self.manager = [AFHTTPSessionManager manager ];
     //
     _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
 
-    [_manager GET:str parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [_manager GET:str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         self.successfulBlock(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);

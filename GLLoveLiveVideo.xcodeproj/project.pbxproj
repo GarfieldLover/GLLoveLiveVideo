@@ -31,9 +31,7 @@
 		5885702F1DDAF704009BEBB1 /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856D931DDAF703009BEBB1 /* UIBarButtonItem+Item.m */; };
 		588570301DDAF704009BEBB1 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856D951DDAF703009BEBB1 /* UIImage+Image.m */; };
 		588570311DDAF704009BEBB1 /* UIView+XJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856D971DDAF703009BEBB1 /* UIView+XJExtension.m */; };
-		588570321DDAF704009BEBB1 /* AttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856D9B1DDAF703009BEBB1 /* AttentionViewController.m */; };
 		588570331DDAF704009BEBB1 /* HotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856D9D1DDAF703009BEBB1 /* HotViewController.m */; };
-		588570341DDAF704009BEBB1 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856D9F1DDAF703009BEBB1 /* NewViewController.m */; };
 		588570351DDAF704009BEBB1 /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DA21DDAF703009BEBB1 /* LiveViewController.m */; };
 		588570361DDAF704009BEBB1 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DA41DDAF703009BEBB1 /* PlayerViewController.m */; };
 		588570371DDAF704009BEBB1 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DA61DDAF703009BEBB1 /* SearchViewController.m */; };
@@ -162,12 +160,8 @@
 		58856D951DDAF703009BEBB1 /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
 		58856D961DDAF703009BEBB1 /* UIView+XJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XJExtension.h"; sourceTree = "<group>"; };
 		58856D971DDAF703009BEBB1 /* UIView+XJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XJExtension.m"; sourceTree = "<group>"; };
-		58856D9A1DDAF703009BEBB1 /* AttentionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionViewController.h; sourceTree = "<group>"; };
-		58856D9B1DDAF703009BEBB1 /* AttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionViewController.m; sourceTree = "<group>"; };
 		58856D9C1DDAF703009BEBB1 /* HotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotViewController.h; sourceTree = "<group>"; };
 		58856D9D1DDAF703009BEBB1 /* HotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotViewController.m; sourceTree = "<group>"; };
-		58856D9E1DDAF703009BEBB1 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
-		58856D9F1DDAF703009BEBB1 /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
 		58856DA11DDAF703009BEBB1 /* LiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveViewController.h; sourceTree = "<group>"; };
 		58856DA21DDAF703009BEBB1 /* LiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveViewController.m; sourceTree = "<group>"; };
 		58856DA31DDAF703009BEBB1 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
@@ -383,12 +377,8 @@
 		58856D991DDAF703009BEBB1 /* ChildViewController */ = {
 			isa = PBXGroup;
 			children = (
-				58856D9A1DDAF703009BEBB1 /* AttentionViewController.h */,
-				58856D9B1DDAF703009BEBB1 /* AttentionViewController.m */,
 				58856D9C1DDAF703009BEBB1 /* HotViewController.h */,
 				58856D9D1DDAF703009BEBB1 /* HotViewController.m */,
-				58856D9E1DDAF703009BEBB1 /* NewViewController.h */,
-				58856D9F1DDAF703009BEBB1 /* NewViewController.m */,
 			);
 			path = ChildViewController;
 			sourceTree = "<group>";
@@ -963,7 +953,6 @@
 				588571361DDAF704009BEBB1 /* UIView+Frame.m in Sources */,
 				5885714E1DDAFA85009BEBB1 /* ODRefreshControl.m in Sources */,
 				58BBD3D81DD9BE940030EFB0 /* IFlyFaceResultDetector.m in Sources */,
-				588570321DDAF704009BEBB1 /* AttentionViewController.m in Sources */,
 				588571341DDAF704009BEBB1 /* UIImage+Image.m in Sources */,
 				5885702E1DDAF704009BEBB1 /* StartLiveView.m in Sources */,
 				588571351DDAF704009BEBB1 /* UIView+Add.m in Sources */,
@@ -983,7 +972,6 @@
 				5885703A1DDAF704009BEBB1 /* MainNavigationController.m in Sources */,
 				5885713D1DDAF704009BEBB1 /* MyView.m in Sources */,
 				58BBD3D31DD9BE940030EFB0 /* CalculatorTools.m in Sources */,
-				588570341DDAF704009BEBB1 /* NewViewController.m in Sources */,
 				58BBD3D71DD9BE940030EFB0 /* PermissionDetector.m in Sources */,
 				588570361DDAF704009BEBB1 /* PlayerViewController.m in Sources */,
 				58BBD3D61DD9BE940030EFB0 /* UIImage+Extensions.m in Sources */,

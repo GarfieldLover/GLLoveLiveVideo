@@ -13,6 +13,9 @@
 #import "DMHeartFlyView.h"
 #import <Accelerate/Accelerate.h>
 
+#import "NetWorkEngine.h"
+
+
 #define XJScreenH [UIScreen mainScreen].bounds.size.height
 #define XJScreenW [UIScreen mainScreen].bounds.size.width
 @interface PlayerViewController ()
@@ -20,8 +23,6 @@
 @property (atomic, retain) id <IJKMediaPlayback> player;
 
 @property (weak, nonatomic) UIView *PlayerView;
-
-@property (atomic, strong) NSURL *url;
 
 @property (nonatomic, assign)int number;
 
@@ -136,21 +137,39 @@
 - (void)goPlaying {
     
     //获取url
-    self.url = [NSURL URLWithString:@"http://10.2.130.88:8080/live/livestream.flv"];
-    _player = [[IJKFFMoviePlayerController alloc] initWithContentURL:self.url withOptions:nil];
+//    self.url = [NSURL URLWithString:@"http://10.2.130.88:8080/live/livestream.flv"];
     
-    UIView *playerview = [self.player view];
-    UIView *displayView = [[UIView alloc] initWithFrame:self.view.bounds];
+    __weak __typeof(self)vc = self;
+    NetWorkEngine * netWork = [[NetWorkEngine alloc] init];
+    [netWork AfJSONGetRequest:self.liveUrl];
+    netWork.successfulBlock = ^(id object){
+        NSString *rUrl = [[object objectForKey:@"message"] objectForKey:@"rUrl"];
+        
+        NetWorkEngine * netWork = [[NetWorkEngine alloc] init];
+        [netWork AfJSONGetRequest:rUrl];
+        netWork.successfulBlock = ^(id object){
+            NSString *rUrl = [object objectForKey:@"url"] ;
+            
+            _player = [[IJKFFMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:rUrl] withOptions:nil];
+            
+            UIView *playerview = [self.player view];
+            UIView *displayView = [[UIView alloc] initWithFrame:self.view.bounds];
+            
+            vc.PlayerView = displayView;
+            [vc.view addSubview:self.PlayerView];
+            
+            // 自动调整自己的宽度和高度
+            playerview.frame = self.PlayerView.bounds;
+            playerview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+            
+            [vc.PlayerView insertSubview:playerview atIndex:1];
+            [_player setScalingMode:IJKMPMovieScalingModeAspectFill];
+        };
+
+
+    };
     
-    self.PlayerView = displayView;
-    [self.view addSubview:self.PlayerView];
-    
-    // 自动调整自己的宽度和高度
-    playerview.frame = self.PlayerView.bounds;
-    playerview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    
-    [self.PlayerView insertSubview:playerview atIndex:1];
-    [_player setScalingMode:IJKMPMovieScalingModeAspectFill];
+
 
 }
 
