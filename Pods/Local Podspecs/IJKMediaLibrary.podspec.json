@@ -1,0 +1,33 @@
+{
+  "name": "IJKMediaLibrary",
+  "version": "0.1.0",
+  "summary": "仅包装了ijkplayer的空lib,仅供测试使用.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/shirokumacafe/IJKMediaLibrary",
+  "license": "MIT",
+  "authors": {
+    "shirokuma": "wengyuchen@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/shirokumacafe/IJKMediaLibrary.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "IJKMediaLibrary/Classes/**/*",
+  "frameworks": [
+    "VideoToolbox",
+    "UIKit",
+    "QuartzCore",
+    "OpenGLES",
+    "MobileCoreServices",
+    "MediaPlayer",
+    "CoreVideo",
+    "CoreMedia",
+    "CoreGraphics",
+    "AVFoundation",
+    "AudioToolbox"
+  ],
+  "vendored_frameworks": "IJKMediaFramework.framework"
+}

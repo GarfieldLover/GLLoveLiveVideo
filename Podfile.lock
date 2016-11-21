@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - IJKMediaLibrary (0.1.0)
   - LFLiveKit (2.5)
   - Masonry (1.0.2)
   - SDWebImage (3.8.2):
@@ -23,18 +24,29 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - IJKMediaLibrary (from `https://git.coding.net/shirokuma/IJKMediaLibrary.git`)
   - LFLiveKit
   - Masonry
   - SDWebImage
   - SVProgressHUD
 
+EXTERNAL SOURCES:
+  IJKMediaLibrary:
+    :git: https://git.coding.net/shirokuma/IJKMediaLibrary.git
+
+CHECKOUT OPTIONS:
+  IJKMediaLibrary:
+    :commit: c7b4abfa19681cbbf277dd791e9740f4bff2f1ab
+    :git: https://git.coding.net/shirokuma/IJKMediaLibrary.git
+
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  IJKMediaLibrary: 0b3ca9b8220325ad64e0f50cb2518eef137ccae5
   LFLiveKit: 4361bd588ae0c9244589119ccdb1c30d14686414
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 3bbcfe2f3c1ea95c49cf45615695fbad4165cf2c
+PODFILE CHECKSUM: 99002bbdfa868cb034c33d0f0eb759f36bce43e0
 
 COCOAPODS: 1.1.1

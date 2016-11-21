@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>IJKMediaLibrary.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>LFLiveKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +47,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3F811D474F471B42CB4F4A902B4E0070</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7C0768DAC9A4ABBCD450F7507BB61777</key>
+		<key>9CA0E5F49E6B509554CE3EDF049EFCFB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E725A301780C6BCC30ADE48C31F05DF8</key>
+		<key>BC01EBBAC9321E36745582DF52BD2342</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E1B68458200492B16FF5A8F87ACBBC4E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECA4E585CF94F6653021A56B398C0CA8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

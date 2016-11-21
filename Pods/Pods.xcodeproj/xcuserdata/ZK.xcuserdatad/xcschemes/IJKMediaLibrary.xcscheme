@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BC01EBBAC9321E36745582DF52BD2342'
-               BlueprintName = 'SDWebImage'
+               BlueprintIdentifier = 'ECA4E585CF94F6653021A56B398C0CA8'
+               BlueprintName = 'IJKMediaLibrary'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libSDWebImage.a'>
+               BuildableName = 'libIJKMediaLibrary.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

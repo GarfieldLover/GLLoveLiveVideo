@@ -5,5 +5,6 @@ target 'GLLoveLiveVideo' do
     pod 'Masonry'
     pod 'SDWebImage'
     pod 'SVProgressHUD'
+	pod 'IJKMediaLibrary', :git => 'https://git.coding.net/shirokuma/IJKMediaLibrary.git'
 
 end
