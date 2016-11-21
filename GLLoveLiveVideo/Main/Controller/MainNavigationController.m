@@ -1,10 +1,3 @@
-//
-//  MainNavigationController.m
-//  高仿映客
-//
-//  Created by JIAAIR on 16/6/29.
-//  Copyright © 2016年 JIAAIR. All rights reserved.
-//
 
 #import "MainNavigationController.h"
 
