@@ -1,9 +1,9 @@
 //
 //  MineViewController.m
-//  高仿映客
+//   
 //
-//  Created by JIAAIR on 16/6/29.
-//  Copyright © 2016年 JIAAIR. All rights reserved.
+//  Created by ZK on 16/6/29.
+//  Copyright © 2016年 ZK. All rights reserved.
 //
 
 #import "MineViewController.h"
@@ -32,6 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"看播";
+
     //将自定义的View放在tabView 的上面，而不是作为tableView.tableHeaderView
     [self setupTableView];
     
@@ -75,11 +77,11 @@
         make.left.bottom.right.equalTo(introView);
         make.height.equalTo(200);
     }];
-    [headView makeConstraints:^(MASConstraintMaker *make) {
-        //headView约束
-        make.top.left.right.equalTo(introView);
-        make.bottom.equalTo(middleView.top);
-    }];
+//    [headView makeConstraints:^(MASConstraintMaker *make) {
+//        //headView约束
+//        make.top.left.right.equalTo(introView);
+//        make.bottom.equalTo(middleView.top);
+//    }];
     
     [self.view addSubview:introView];
     

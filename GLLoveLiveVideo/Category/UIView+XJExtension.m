@@ -1,9 +1,9 @@
 //
-//  UIView+XJExtension.m
-//  百思不得姐
+//  UIControl+Extension.m
+//   
 //
-//  Created by JIAAIR on 16/5/18.
-//  Copyright © 2016年 徐甲. All rights reserved.
+//  Created by ZK on 16/7/3.
+//  Copyright © 2016年 ZK. All rights reserved.
 //
 
 #import "UIView+XJExtension.h"

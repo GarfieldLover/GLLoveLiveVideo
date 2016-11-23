@@ -1,9 +1,9 @@
 //
 //  CameraViewController.m
-//  高仿映客
+//   
 //
-//  Created by JIAAIR on 16/7/3.
-//  Copyright © 2016年 JIAAIR. All rights reserved.
+//  Created by ZK on 16/7/3.
+//  Copyright © 2016年 ZK. All rights reserved.
 //
 
 #import "CameraViewController.h"
@@ -22,7 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"开播";
+
     //设置背景图片高斯模糊
     [self gaussianImage];
     

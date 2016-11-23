@@ -12,7 +12,7 @@
     
     if (self == [MainNavigationController class]) {
         UINavigationBar *bar = [UINavigationBar appearanceWhenContainedIn:self, nil];
-        [bar setBackgroundImage:[UIImage imageNamed:@"global_background"] forBarMetrics:UIBarMetricsDefault];
+//        [bar setBackgroundImage:[UIImage imageNamed:@"global_background"] forBarMetrics:UIBarMetricsDefault];
     }
 }
 - (void)viewDidLoad {

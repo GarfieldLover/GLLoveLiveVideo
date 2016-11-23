@@ -5,13 +5,15 @@
 #import "ODRefreshControl.h"
 #import "NetWorkEngine.h"
 #import "PlayerModel.h"
+#import <Masonry/Masonry.h>
 
 // 千帆接口
 #define MainData [NSString stringWithFormat:@"http://qf.56.com/home/v4/moreAnchor.ios?imei=F0E5DA05-2D39-4C64-96B1-709589586FB7&index=0&signature=4836aa20a15be22db215a628d766c9f7&size=48&ts=1479461479&type=0"]
 #define Ratio 10/8
-@interface LiveViewController () <UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic, strong)UITableView * tableView;
+@interface LiveViewController () <UICollectionViewDelegate,UICollectionViewDataSource>
+
+@property (nonatomic, strong) UICollectionView* collectionView;
 @property (nonatomic, strong)NSMutableArray * dataArray;
 
 @end
@@ -28,7 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupTableView];
+    self.title = @"千帆";
+
+    [self setupView];
     
     // 添加下拉刷新
     [self addRefresh];
@@ -67,13 +71,29 @@
 #pragma mark ---- <setupTableView>
 - (void)setupTableView {
     
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    _tableView.rowHeight = [UIScreen mainScreen].bounds.size.width * Ratio +1;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:_tableView];
+    UICollectionViewFlowLayout* flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     
+    UICollectionView* collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+    collectionView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:collectionView];
+    collectionView.showsHorizontalScrollIndicator = NO;
+    
+    [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.bottom.equalTo(self.view);
+    }];
+    
+    [collectionView registerClass:[SVMemberReservationCell class] forCellWithReuseIdentifier:@"SVMemberReservationCellId"];
+    [collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
+    [collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
+//    flowLayout.headerReferenceSize = CGSizeMake(5, CellHeight);
+//    flowLayout.footerReferenceSize = CGSizeMake(5, CellHeight);
+    
+    //4.设置代理
+    collectionView.delegate = self;
+    collectionView.dataSource = self;
+    
+    self.collectionView = collectionView;
     
 }
 

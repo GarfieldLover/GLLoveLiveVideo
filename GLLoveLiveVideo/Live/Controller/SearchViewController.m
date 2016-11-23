@@ -1,10 +1,4 @@
-//
-//  SearchViewController.m
-//  高仿映客
-//
-//  Created by JIAAIR on 16/6/30.
-//  Copyright © 2016年 JIAAIR. All rights reserved.
-//
+
 
 #import "SearchViewController.h"
 #define XJScreenW [UIScreen mainScreen].bounds.size.width
