@@ -30,7 +30,6 @@
 		588570361DDAF704009BEBB1 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DA41DDAF703009BEBB1 /* PlayerViewController.m */; };
 		588570371DDAF704009BEBB1 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DA61DDAF703009BEBB1 /* SearchViewController.m */; };
 		588570381DDAF704009BEBB1 /* PlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DA91DDAF703009BEBB1 /* PlayerModel.m */; };
-		588570391DDAF704009BEBB1 /* PlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DAC1DDAF703009BEBB1 /* PlayerTableViewCell.m */; };
 		5885703A1DDAF704009BEBB1 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DB01DDAF703009BEBB1 /* MainNavigationController.m */; };
 		5885703B1DDAF704009BEBB1 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DB21DDAF703009BEBB1 /* MainTabBarController.m */; };
 		588571381DDAF704009BEBB1 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588570221DDAF704009BEBB1 /* MineViewController.m */; };
@@ -155,8 +154,6 @@
 		58856DA61DDAF703009BEBB1 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		58856DA81DDAF703009BEBB1 /* PlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerModel.h; sourceTree = "<group>"; };
 		58856DA91DDAF703009BEBB1 /* PlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerModel.m; sourceTree = "<group>"; };
-		58856DAB1DDAF703009BEBB1 /* PlayerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerTableViewCell.h; sourceTree = "<group>"; };
-		58856DAC1DDAF703009BEBB1 /* PlayerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerTableViewCell.m; sourceTree = "<group>"; };
 		58856DAF1DDAF703009BEBB1 /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
 		58856DB01DDAF703009BEBB1 /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		58856DB11DDAF703009BEBB1 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
@@ -374,8 +371,6 @@
 		58856DAA1DDAF703009BEBB1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				58856DAB1DDAF703009BEBB1 /* PlayerTableViewCell.h */,
-				58856DAC1DDAF703009BEBB1 /* PlayerTableViewCell.m */,
 				5858D1B31DE5A37500AC1816 /* SVMemberReservationCell.h */,
 				5858D1B41DE5A37500AC1816 /* SVMemberReservationCell.m */,
 			);
@@ -880,7 +875,6 @@
 				5885714E1DDAFA85009BEBB1 /* ODRefreshControl.m in Sources */,
 				58BBD3D81DD9BE940030EFB0 /* IFlyFaceResultDetector.m in Sources */,
 				5885702E1DDAF704009BEBB1 /* StartLiveView.m in Sources */,
-				588570391DDAF704009BEBB1 /* PlayerTableViewCell.m in Sources */,
 				588571381DDAF704009BEBB1 /* MineViewController.m in Sources */,
 				58CF340D1DB9D80400B1B6C4 /* AppDelegate.m in Sources */,
 				5885713B1DDAF704009BEBB1 /* MineHeadView.m in Sources */,

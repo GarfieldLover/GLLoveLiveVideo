@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlayerModel.h"
+
 
 @interface SVMemberReservationCell : UICollectionViewCell
 
-- (void)updateWithTemplate:(SVTemplate *)templateInfo dataDic:(NSDictionary *)dic columnID:(NSInteger)columnID indexPath:(NSInteger)indexPath;
+- (void)updateWithdataDic:(PlayerModel *)playerModel  indexPath:(NSInteger)indexPath;
 
 @end
 

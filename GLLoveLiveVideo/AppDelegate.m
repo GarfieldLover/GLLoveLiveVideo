@@ -40,6 +40,7 @@
 //    
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor =[UIColor whiteColor];
     
     MainTabBarController *tabBarVC = [[MainTabBarController alloc] init];
     [UIApplication sharedApplication].keyWindow.rootViewController = tabBarVC;

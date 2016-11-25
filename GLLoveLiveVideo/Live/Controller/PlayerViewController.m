@@ -22,8 +22,6 @@
 
 @property (atomic, retain) id <IJKMediaPlayback> player;
 
-@property (weak, nonatomic) UIView *PlayerView;
-
 @property (nonatomic, assign)int number;
 
 @property (nonatomic, assign)CGFloat heartSize;
@@ -41,9 +39,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // 播放视频
-    [self goPlaying];
-    
     // 开启通知
     [self installMovieNotificationObservers];
     
@@ -52,7 +47,9 @@
     
     // 创建按钮
     [self setupBtn];
-
+    
+    // 播放视频
+    [self goPlaying];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -66,7 +63,7 @@
 - (void)setupLoadingView
 {
     self.dimIamge = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    [_dimIamge sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://img.meelive.cn/%@", _imageUrl]] placeholderImage:[UIImage imageNamed:@"default_room"]];
+    [_dimIamge sd_setImageWithURL:[NSURL URLWithString:_imageUrl] placeholderImage:[UIImage imageNamed:@"default_room"]];
     UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     visualEffectView.frame = _dimIamge.bounds;
@@ -151,26 +148,24 @@
             NSString *rUrl = [object objectForKey:@"url"] ;
             
             _player = [[IJKFFMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:rUrl] withOptions:nil];
-            
-            UIView *playerview = [self.player view];
-            UIView *displayView = [[UIView alloc] initWithFrame:self.view.bounds];
-            
-            vc.PlayerView = displayView;
-            [vc.view addSubview:self.PlayerView];
-            
+            [_player setScalingMode:IJKMPMovieScalingModeAspectFill];
+
+            UIView *playerview = _player.view;
             // 自动调整自己的宽度和高度
-            playerview.frame = self.PlayerView.bounds;
+            playerview.frame = self.view.bounds;
             playerview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
             
-            [vc.PlayerView insertSubview:playerview atIndex:1];
-            [_player setScalingMode:IJKMPMovieScalingModeAspectFill];
+            //动画
+            [vc.view insertSubview:playerview aboveSubview:self.dimIamge];
+            
+            
+            if (![_player isPlaying]) {
+                //准备播放
+                [_player prepareToPlay];
+            }
         };
-
-
     };
     
-
-
 }
 
 // 返回
@@ -373,7 +368,7 @@ static int _fishIndex = 0;
 
 - (void)moviePlayBackStateDidChange:(NSNotification*)notification {
     
-    _dimIamge.hidden = YES;
+//    _dimIamge.hidden = YES;
     
     switch (_player.playbackState) {
             
