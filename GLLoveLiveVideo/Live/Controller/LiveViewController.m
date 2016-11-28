@@ -28,8 +28,11 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"千帆";
+        
+    UIImage* logo = [UIImage imageNamed:@"logo4searchbar"];
+    UIImageView* logoView = [[UIImageView alloc] initWithImage:logo];
+    logoView.frame = CGRectMake(0, 0, logo.size.width, logo.size.height);
+    self.navigationItem.titleView = logoView;
 
     [self setupView];
     
@@ -82,17 +85,12 @@
     }];
     
     [collectionView registerClass:[SVMemberReservationCell class] forCellWithReuseIdentifier:@"SVMemberReservationCellId"];
-//    [collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
-//    [collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
-//    flowLayout.headerReferenceSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 20);
-//    flowLayout.footerReferenceSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 20);
-    
+
     //4.设置代理
     collectionView.delegate = self;
     collectionView.dataSource = self;
     
     self.collectionView = collectionView;
-    
 }
 
 #pragma mark ---- <添加下拉刷新>

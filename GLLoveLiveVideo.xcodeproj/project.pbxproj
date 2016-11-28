@@ -28,7 +28,6 @@
 		588570311DDAF704009BEBB1 /* UIView+XJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856D971DDAF703009BEBB1 /* UIView+XJExtension.m */; };
 		588570351DDAF704009BEBB1 /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DA21DDAF703009BEBB1 /* LiveViewController.m */; };
 		588570361DDAF704009BEBB1 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DA41DDAF703009BEBB1 /* PlayerViewController.m */; };
-		588570371DDAF704009BEBB1 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DA61DDAF703009BEBB1 /* SearchViewController.m */; };
 		588570381DDAF704009BEBB1 /* PlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DA91DDAF703009BEBB1 /* PlayerModel.m */; };
 		5885703A1DDAF704009BEBB1 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DB01DDAF703009BEBB1 /* MainNavigationController.m */; };
 		5885703B1DDAF704009BEBB1 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DB21DDAF703009BEBB1 /* MainTabBarController.m */; };
@@ -150,8 +149,6 @@
 		58856DA21DDAF703009BEBB1 /* LiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveViewController.m; sourceTree = "<group>"; };
 		58856DA31DDAF703009BEBB1 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		58856DA41DDAF703009BEBB1 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
-		58856DA51DDAF703009BEBB1 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		58856DA61DDAF703009BEBB1 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		58856DA81DDAF703009BEBB1 /* PlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerModel.h; sourceTree = "<group>"; };
 		58856DA91DDAF703009BEBB1 /* PlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerModel.m; sourceTree = "<group>"; };
 		58856DAF1DDAF703009BEBB1 /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
@@ -353,8 +350,6 @@
 				58856DA21DDAF703009BEBB1 /* LiveViewController.m */,
 				58856DA31DDAF703009BEBB1 /* PlayerViewController.h */,
 				58856DA41DDAF703009BEBB1 /* PlayerViewController.m */,
-				58856DA51DDAF703009BEBB1 /* SearchViewController.h */,
-				58856DA61DDAF703009BEBB1 /* SearchViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -646,10 +641,9 @@
 		58CF34071DB9D80400B1B6C4 /* GLLoveLiveVideo */ = {
 			isa = PBXGroup;
 			children = (
-				58856D891DDAF703009BEBB1 /* Camera */,
-				58856D911DDAF703009BEBB1 /* Category */,
-				58856D981DDAF703009BEBB1 /* Live */,
 				58856DAD1DDAF703009BEBB1 /* Main */,
+				58856D981DDAF703009BEBB1 /* Live */,
+				58856D891DDAF703009BEBB1 /* Camera */,
 				588570121DDAF704009BEBB1 /* Mine */,
 				58CF340B1DB9D80400B1B6C4 /* AppDelegate.h */,
 				58CF340C1DB9D80400B1B6C4 /* AppDelegate.m */,
@@ -659,6 +653,7 @@
 				58CF34141DB9D80400B1B6C4 /* Assets.xcassets */,
 				58CF34161DB9D80400B1B6C4 /* LaunchScreen.storyboard */,
 				58CF34191DB9D80400B1B6C4 /* Info.plist */,
+				58856D911DDAF703009BEBB1 /* Category */,
 				5885713E1DDAFA85009BEBB1 /* lib */,
 				58BBD3BA1DD9BE940030EFB0 /* tools */,
 				58BBD3DB1DD9BE9B0030EFB0 /* video_lovely_eye_iOS */,
@@ -879,7 +874,6 @@
 				58CF340D1DB9D80400B1B6C4 /* AppDelegate.m in Sources */,
 				5885713B1DDAF704009BEBB1 /* MineHeadView.m in Sources */,
 				5885714A1DDAFA85009BEBB1 /* DMHeartFlyView.m in Sources */,
-				588570371DDAF704009BEBB1 /* SearchViewController.m in Sources */,
 				5885702F1DDAF704009BEBB1 /* UIBarButtonItem+Item.m in Sources */,
 				588570301DDAF704009BEBB1 /* UIImage+Image.m in Sources */,
 				588570351DDAF704009BEBB1 /* LiveViewController.m in Sources */,

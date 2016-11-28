@@ -164,7 +164,7 @@ static int padding = 30;
         _closeButton.exclusiveTouch = YES;
         __weak __typeof__(self) weakSelf = self;
         [_closeButton addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
-            [weakSelf.viewController dismissViewControllerAnimated:YES completion:nil];
+            [weakSelf removeFromSuperview];
         }];
     }
     return _closeButton;

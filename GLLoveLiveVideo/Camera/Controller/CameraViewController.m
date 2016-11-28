@@ -23,40 +23,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"开播";
-
-    //设置背景图片高斯模糊
-    [self gaussianImage];
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     
     //隐藏状态栏
     [[UIApplication sharedApplication] setStatusBarHidden:TRUE];
-
-    //设置键盘TextField
-    [self setupTextField];
     
-}
-
-#pragma mark ---- <设置键盘TextField>
-- (void)setupTextField {
-    
-    [_myTitle becomeFirstResponder];
-    
-    //设置键盘颜色
-    _myTitle.tintColor = [UIColor whiteColor];
-    
-    //设置占位文字颜色
-    [_myTitle setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
 
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    //设置背景图片高斯模糊
+    [self gaussianImage];
+
+}
+
 
 #pragma mark ---- <设置背景图片高斯模糊>
 - (void)gaussianImage {
     
-//    GPUImageGaussianBlurFilter * blurFilter = [[GPUImageGaussianBlurFilter alloc] init];
-//    blurFilter.blurRadiusInPixels = 2.0;
-//    UIImage * image = [UIImage imageNamed:@"bg_zbfx"];
-//    UIImage *blurredImage = [blurFilter imageByFilteringImage:image];
+    UIImage * image = [UIImage imageNamed:@"bg_zbfx"];
     
-//    self.backgroundView.image = blurredImage;
+    self.backgroundView.image = image;
+    
+    UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    visualEffectView.frame = self.backgroundView.bounds;
+    [self.backgroundView addSubview:visualEffectView];
 }
 
 //返回主界面
