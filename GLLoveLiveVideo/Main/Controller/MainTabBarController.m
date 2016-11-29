@@ -3,7 +3,7 @@
 #import "MainNavigationController.h"
 #import "CameraViewController.h"
 #import "LiveViewController.h"
-#import "MineViewController.h"
+#import "LivePlayerViewController.h"
 #import "CameraViewController.h"
 #import "UIImage+Image.h"
 #import "UIView+Frame.h"
@@ -76,10 +76,10 @@ NSString * const repeateClickTabBarButtonNote = @"repeateClickTabBarButton";
     cameraVc.tabBarItem.selectedImage = [UIImage imageNamed:@"tab_room_p"];
     cameraVc.tabBarItem.title = @"开播";
 
-    MineViewController *mineVc = self.childViewControllers[2];
-    mineVc.tabBarItem.image = [UIImage imageNamed:@"tab_me"];
-    mineVc.tabBarItem.selectedImage = [UIImage imageNamed:@"tab_me_p"];
-    mineVc.tabBarItem.title = @"看播";
+    LivePlayerViewController *playerVc = self.childViewControllers[2];
+    playerVc.tabBarItem.image = [UIImage imageNamed:@"tab_me"];
+    playerVc.tabBarItem.selectedImage = [UIImage imageNamed:@"tab_me_p"];
+    playerVc.tabBarItem.title = @"看播";
 
 }
 
@@ -99,7 +99,7 @@ NSString * const repeateClickTabBarButtonNote = @"repeateClickTabBarButton";
     [self addChildViewController:cameraNav];
     
     //Main
-    MineViewController *mineVc = [[MineViewController alloc] init];
+    LivePlayerViewController *mineVc = [[LivePlayerViewController alloc] init];
     MainNavigationController *mineNav = [[MainNavigationController alloc] initWithRootViewController:mineVc];
     
     [self addChildViewController:mineNav];

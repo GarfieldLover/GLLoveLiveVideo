@@ -31,12 +31,6 @@
 		588570381DDAF704009BEBB1 /* PlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DA91DDAF703009BEBB1 /* PlayerModel.m */; };
 		5885703A1DDAF704009BEBB1 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DB01DDAF703009BEBB1 /* MainNavigationController.m */; };
 		5885703B1DDAF704009BEBB1 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58856DB21DDAF703009BEBB1 /* MainTabBarController.m */; };
-		588571381DDAF704009BEBB1 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588570221DDAF704009BEBB1 /* MineViewController.m */; };
-		588571391DDAF704009BEBB1 /* MiddleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588570251DDAF704009BEBB1 /* MiddleView.m */; };
-		5885713A1DDAF704009BEBB1 /* MiddleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588570261DDAF704009BEBB1 /* MiddleView.xib */; };
-		5885713B1DDAF704009BEBB1 /* MineHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588570281DDAF704009BEBB1 /* MineHeadView.m */; };
-		5885713C1DDAF704009BEBB1 /* MineHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588570291DDAF704009BEBB1 /* MineHeadView.xib */; };
-		5885713D1DDAF704009BEBB1 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5885702B1DDAF704009BEBB1 /* MyView.m */; };
 		5885714A1DDAFA85009BEBB1 /* DMHeartFlyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588571411DDAFA85009BEBB1 /* DMHeartFlyView.m */; };
 		5885714E1DDAFA85009BEBB1 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 588571491DDAFA85009BEBB1 /* ODRefreshControl.m */; };
 		58BBD3D21DD9BE940030EFB0 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58BBD3BD1DD9BE940030EFB0 /* CanvasView.m */; };
@@ -111,6 +105,7 @@
 		58CF34131DB9D80400B1B6C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58CF34111DB9D80400B1B6C4 /* Main.storyboard */; };
 		58CF34151DB9D80400B1B6C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58CF34141DB9D80400B1B6C4 /* Assets.xcassets */; };
 		58CF34181DB9D80400B1B6C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58CF34161DB9D80400B1B6C4 /* LaunchScreen.storyboard */; };
+		58DC5DA91DED3B1C00199575 /* LivePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DC5DA81DED3B1C00199575 /* LivePlayerViewController.m */; };
 		8E4D52813993B1753626C47F /* libPods-GLLoveLiveVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6853292B0CBBBCE9EC9A1028 /* libPods-GLLoveLiveVideo.a */; };
 /* End PBXBuildFile section */
 
@@ -155,16 +150,6 @@
 		58856DB01DDAF703009BEBB1 /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		58856DB11DDAF703009BEBB1 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		58856DB21DDAF703009BEBB1 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
-		588570211DDAF704009BEBB1 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MineViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		588570221DDAF704009BEBB1 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MineViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		588570241DDAF704009BEBB1 /* MiddleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MiddleView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		588570251DDAF704009BEBB1 /* MiddleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MiddleView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		588570261DDAF704009BEBB1 /* MiddleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiddleView.xib; sourceTree = "<group>"; };
-		588570271DDAF704009BEBB1 /* MineHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MineHeadView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		588570281DDAF704009BEBB1 /* MineHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MineHeadView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		588570291DDAF704009BEBB1 /* MineHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineHeadView.xib; sourceTree = "<group>"; };
-		5885702A1DDAF704009BEBB1 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MyView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		5885702B1DDAF704009BEBB1 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		588571401DDAFA85009BEBB1 /* DMHeartFlyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMHeartFlyView.h; sourceTree = "<group>"; };
 		588571411DDAFA85009BEBB1 /* DMHeartFlyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMHeartFlyView.m; sourceTree = "<group>"; };
 		588571481DDAFA85009BEBB1 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
@@ -253,6 +238,8 @@
 		58CF34141DB9D80400B1B6C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58CF34171DB9D80400B1B6C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58CF34191DB9D80400B1B6C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58DC5DA71DED3B1C00199575 /* LivePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePlayerViewController.h; sourceTree = "<group>"; };
+		58DC5DA81DED3B1C00199575 /* LivePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePlayerViewController.m; sourceTree = "<group>"; };
 		6853292B0CBBBCE9EC9A1028 /* libPods-GLLoveLiveVideo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GLLoveLiveVideo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C459C54DAFBD4758DE70BCB /* Pods-GLLoveLiveVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLLoveLiveVideo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GLLoveLiveVideo/Pods-GLLoveLiveVideo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -389,39 +376,6 @@
 				58856DB21DDAF703009BEBB1 /* MainTabBarController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		588570121DDAF704009BEBB1 /* Mine */ = {
-			isa = PBXGroup;
-			children = (
-				588570201DDAF704009BEBB1 /* Controller */,
-				588570231DDAF704009BEBB1 /* View */,
-			);
-			path = Mine;
-			sourceTree = "<group>";
-		};
-		588570201DDAF704009BEBB1 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				588570211DDAF704009BEBB1 /* MineViewController.h */,
-				588570221DDAF704009BEBB1 /* MineViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		588570231DDAF704009BEBB1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				588570241DDAF704009BEBB1 /* MiddleView.h */,
-				588570251DDAF704009BEBB1 /* MiddleView.m */,
-				588570261DDAF704009BEBB1 /* MiddleView.xib */,
-				588570271DDAF704009BEBB1 /* MineHeadView.h */,
-				588570281DDAF704009BEBB1 /* MineHeadView.m */,
-				588570291DDAF704009BEBB1 /* MineHeadView.xib */,
-				5885702A1DDAF704009BEBB1 /* MyView.h */,
-				5885702B1DDAF704009BEBB1 /* MyView.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		5885713E1DDAFA85009BEBB1 /* lib */ = {
@@ -644,7 +598,7 @@
 				58856DAD1DDAF703009BEBB1 /* Main */,
 				58856D981DDAF703009BEBB1 /* Live */,
 				58856D891DDAF703009BEBB1 /* Camera */,
-				588570121DDAF704009BEBB1 /* Mine */,
+				58DC5DA61DED3A7500199575 /* CameraLive */,
 				58CF340B1DB9D80400B1B6C4 /* AppDelegate.h */,
 				58CF340C1DB9D80400B1B6C4 /* AppDelegate.m */,
 				58CF340E1DB9D80400B1B6C4 /* ViewController.h */,
@@ -668,6 +622,15 @@
 				58CF34091DB9D80400B1B6C4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58DC5DA61DED3A7500199575 /* CameraLive */ = {
+			isa = PBXGroup;
+			children = (
+				58DC5DA71DED3B1C00199575 /* LivePlayerViewController.h */,
+				58DC5DA81DED3B1C00199575 /* LivePlayerViewController.m */,
+			);
+			path = CameraLive;
 			sourceTree = "<group>";
 		};
 		788672BAA8CAD00C4E65C88A /* Pods */ = {
@@ -758,7 +721,6 @@
 				58BBD4281DD9BE9B0030EFB0 /* eye_16.png in Resources */,
 				58BBD43A1DD9BE9B0030EFB0 /* frame_10.png in Resources */,
 				58BBD4481DD9BE9B0030EFB0 /* frame_23.png in Resources */,
-				5885713A1DDAF704009BEBB1 /* MiddleView.xib in Resources */,
 				58BBD4231DD9BE9B0030EFB0 /* eye_11.png in Resources */,
 				58BBD4491DD9BE9B0030EFB0 /* frame_3.png in Resources */,
 				58BBD4311DD9BE9B0030EFB0 /* eye_3.png in Resources */,
@@ -800,7 +762,6 @@
 				58BBD4391DD9BE9B0030EFB0 /* frame_1.png in Resources */,
 				58BBD44E1DD9BE9B0030EFB0 /* frame_8.png in Resources */,
 				58BBD43D1DD9BE9B0030EFB0 /* frame_13.png in Resources */,
-				5885713C1DDAF704009BEBB1 /* MineHeadView.xib in Resources */,
 				58BBD4471DD9BE9B0030EFB0 /* frame_22.png in Resources */,
 				58BBD41B1DD9BE9B0030EFB0 /* cheek_2.png in Resources */,
 				58BBD4261DD9BE9B0030EFB0 /* eye_14.png in Resources */,
@@ -870,21 +831,18 @@
 				5885714E1DDAFA85009BEBB1 /* ODRefreshControl.m in Sources */,
 				58BBD3D81DD9BE940030EFB0 /* IFlyFaceResultDetector.m in Sources */,
 				5885702E1DDAF704009BEBB1 /* StartLiveView.m in Sources */,
-				588571381DDAF704009BEBB1 /* MineViewController.m in Sources */,
 				58CF340D1DB9D80400B1B6C4 /* AppDelegate.m in Sources */,
-				5885713B1DDAF704009BEBB1 /* MineHeadView.m in Sources */,
 				5885714A1DDAFA85009BEBB1 /* DMHeartFlyView.m in Sources */,
 				5885702F1DDAF704009BEBB1 /* UIBarButtonItem+Item.m in Sources */,
 				588570301DDAF704009BEBB1 /* UIImage+Image.m in Sources */,
 				588570351DDAF704009BEBB1 /* LiveViewController.m in Sources */,
-				588571391DDAF704009BEBB1 /* MiddleView.m in Sources */,
 				5858D1B51DE5A37500AC1816 /* SVMemberReservationCell.m in Sources */,
 				5885703B1DDAF704009BEBB1 /* MainTabBarController.m in Sources */,
 				5885703A1DDAF704009BEBB1 /* MainNavigationController.m in Sources */,
-				5885713D1DDAF704009BEBB1 /* MyView.m in Sources */,
 				5858D1AD1DE52ED100AC1816 /* UIView+Add.m in Sources */,
 				5858D1AE1DE52ED100AC1816 /* UIView+Frame.m in Sources */,
 				58BBD3D31DD9BE940030EFB0 /* CalculatorTools.m in Sources */,
+				58DC5DA91DED3B1C00199575 /* LivePlayerViewController.m in Sources */,
 				58BBD3D71DD9BE940030EFB0 /* PermissionDetector.m in Sources */,
 				588570361DDAF704009BEBB1 /* PlayerViewController.m in Sources */,
 				58BBD3D61DD9BE940030EFB0 /* UIImage+Extensions.m in Sources */,

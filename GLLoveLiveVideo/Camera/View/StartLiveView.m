@@ -217,7 +217,7 @@ static int padding = 30;
         _startLiveButton = [UIButton new];
         
         //位置
-        _startLiveButton.frame = CGRectMake((XJScreenW - 200) * 0.5, XJScreenH - 100, 200, 40);
+        _startLiveButton.frame = CGRectMake((XJScreenW - 200) * 0.5, XJScreenH - 150, 200, 40);
         
         _startLiveButton.layer.cornerRadius = _startLiveButton.frame.size.height * 0.5;
         [_startLiveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -231,7 +231,7 @@ static int padding = 30;
             if(_self.startLiveButton.selected){
                 [_self.startLiveButton setTitle:@"结束直播" forState:UIControlStateNormal];
                 LFLiveStreamInfo *stream = [LFLiveStreamInfo new];
-                stream.url = @"rtmp://10.2.130.88/live/livestream";
+                stream.url = @"rtmp://10.2.9.115/live/livestream";
                 //rtmp://10.2.130.88/rtmplive/livestream
                 [_self.session startLive:stream];
             }else{

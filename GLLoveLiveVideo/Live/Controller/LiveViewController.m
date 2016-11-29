@@ -44,6 +44,13 @@
     
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 #pragma mark ---- <加载数据>
 - (void)loadData {
     [self.dataArray removeAllObjects];

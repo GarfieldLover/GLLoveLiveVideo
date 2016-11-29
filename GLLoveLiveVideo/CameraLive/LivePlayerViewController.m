@@ -1,12 +1,13 @@
 //
-//  PlayerViewController.m
-//   
+//  LivePlayerViewController.m
+//  GLLoveLiveVideo
 //
-//  Created by ZK on 16/7/2.
+//  Created by ZK on 2016/11/29.
 //  Copyright © 2016年 ZK. All rights reserved.
 //
 
-#import "PlayerViewController.h"
+
+#import "LivePlayerViewController.h"
 #import <IJKMediaFramework/IJKMediaFramework.h>
 #import "UIImageView+WebCache.h"
 #import "SVProgressHUD.h"
@@ -18,7 +19,7 @@
 
 #define XJScreenH [UIScreen mainScreen].bounds.size.height
 #define XJScreenW [UIScreen mainScreen].bounds.size.width
-@interface PlayerViewController ()
+@interface LivePlayerViewController ()
 
 @property (atomic, retain) id <IJKMediaPlayback> player;
 
@@ -34,12 +35,13 @@
 
 @end
 
-@implementation PlayerViewController
+@implementation LivePlayerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    http://192.168.1.170:8080/live/livestream.flv
+    self.title = @"看播";
+
+    _liveUrl = @"http://10.2.9.115:8080/live/livestream.flv";
     
     // 开启通知
     [self installMovieNotificationObservers];
@@ -65,11 +67,12 @@
 - (void)setupLoadingView
 {
     self.dimIamge = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    [_dimIamge sd_setImageWithURL:[NSURL URLWithString:_imageUrl] placeholderImage:[UIImage imageNamed:@"default_room"]];
-    UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-    visualEffectView.frame = _dimIamge.bounds;
-    [_dimIamge addSubview:visualEffectView];
+    
+    [_dimIamge setImage:[UIImage imageNamed:@"default_room"]];
+//    UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+//    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+//    visualEffectView.frame = _dimIamge.bounds;
+//    [_dimIamge addSubview:visualEffectView];
     [self.view addSubview:_dimIamge];
     
 }
@@ -77,16 +80,16 @@
 #pragma mark ---- <创建按钮>
 - (void)setupBtn {
     
-    // 返回
-    UIButton * backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    backBtn.frame = CGRectMake(10, 64 / 2 - 8, 33, 33);
-    [backBtn setImage:[UIImage imageNamed:@"返回"] forState:UIControlStateNormal];
-    [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
-    backBtn.layer.shadowColor = [UIColor blackColor].CGColor;
-    backBtn.layer.shadowOffset = CGSizeMake(0, 0);
-    backBtn.layer.shadowOpacity = 0.5;
-    backBtn.layer.shadowRadius = 1;
-    [self.view addSubview:backBtn];
+//    // 返回
+//    UIButton * backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    backBtn.frame = CGRectMake(10, 64 / 2 - 8, 33, 33);
+//    [backBtn setImage:[UIImage imageNamed:@"返回"] forState:UIControlStateNormal];
+//    [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+//    backBtn.layer.shadowColor = [UIColor blackColor].CGColor;
+//    backBtn.layer.shadowOffset = CGSizeMake(0, 0);
+//    backBtn.layer.shadowOpacity = 0.5;
+//    backBtn.layer.shadowRadius = 1;
+//    [self.view addSubview:backBtn];
     
     // 暂停
     UIButton * playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -108,6 +111,8 @@
     [self.view addSubview:playBtn];
     
     // 点赞
+    加 nav判断吧，ui
+    
     UIButton * heartBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     heartBtn.frame = CGRectMake(36, XJScreenH - 36 - 10, 36, 36);
     [heartBtn setImage:[UIImage imageNamed:@"点赞"] forState:UIControlStateNormal];
@@ -135,38 +140,24 @@
 
 - (void)goPlaying {
     
-    //获取url
-//    self.url = [NSURL URLWithString:@"http://10.2.130.88:8080/live/livestream.flv"];
-    
-    __weak __typeof(self)vc = self;
-    NetWorkEngine * netWork = [[NetWorkEngine alloc] init];
-    [netWork AfJSONGetRequest:self.liveUrl];
-    netWork.successfulBlock = ^(id object){
-        NSString *rUrl = [[object objectForKey:@"message"] objectForKey:@"rUrl"];
-        
-        NetWorkEngine * netWork = [[NetWorkEngine alloc] init];
-        [netWork AfJSONGetRequest:rUrl];
-        netWork.successfulBlock = ^(id object){
-            NSString *rUrl = [object objectForKey:@"url"] ;
-            
-            _player = [[IJKFFMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:rUrl] withOptions:nil];
+    //2-3秒延迟
+            _player = [[IJKFFMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:_liveUrl] withOptions:nil];
             [_player setScalingMode:IJKMPMovieScalingModeAspectFill];
-
+            
             UIView *playerview = _player.view;
             // 自动调整自己的宽度和高度
             playerview.frame = self.view.bounds;
             playerview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
             
             //动画
-            [vc.view insertSubview:playerview aboveSubview:self.dimIamge];
+            [self.view insertSubview:playerview aboveSubview:self.dimIamge];
             
             
             if (![_player isPlaying]) {
                 //准备播放
                 [_player prepareToPlay];
             }
-        };
-    };
+
     
 }
 
@@ -239,7 +230,7 @@
             [porsche918 removeFromSuperview];
         }];
     });
- 
+    
     
     
     //烟花
@@ -252,7 +243,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(durTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:0.5 animations:^{
             //没找到设置透明度的方法，有创意可以自己写
-//            fireworksL.alpha = 0;
+            //            fireworksL.alpha = 0;
         } completion:^(BOOL finished) {
             [fireworksL removeFromSuperlayer];
         }];
@@ -260,7 +251,7 @@
     _fireworksL = fireworksL;
     
     
-
+    
     NSMutableArray *tempArray = [NSMutableArray array];
     
     for (int i = 1; i < 3; i++) {
@@ -370,7 +361,7 @@ static int _fishIndex = 0;
 
 - (void)moviePlayBackStateDidChange:(NSNotification*)notification {
     
-//    _dimIamge.hidden = YES;
+    //    _dimIamge.hidden = YES;
     
     switch (_player.playbackState) {
             
