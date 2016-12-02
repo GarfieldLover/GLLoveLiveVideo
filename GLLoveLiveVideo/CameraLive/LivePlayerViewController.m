@@ -93,7 +93,7 @@
     
     // 暂停
     UIButton * playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    playBtn.frame = CGRectMake(XJScreenW - 33 - 10, 64 / 2 - 8, 33, 33);
+    playBtn.frame = CGRectMake(XJScreenW - 33 - 10, 64 / 2 - 8+100, 33, 33);
     
     if (self.number == 0) {
         [playBtn setImage:[UIImage imageNamed:@"暂停"] forState:(UIControlStateNormal)];
