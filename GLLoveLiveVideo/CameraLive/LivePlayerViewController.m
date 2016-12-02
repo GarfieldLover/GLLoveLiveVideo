@@ -111,10 +111,8 @@
     [self.view addSubview:playBtn];
     
     // 点赞
-    加 nav判断吧，ui
-    
     UIButton * heartBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    heartBtn.frame = CGRectMake(36, XJScreenH - 36 - 10, 36, 36);
+    heartBtn.frame = CGRectMake(36, XJScreenH - 36 - 100, 36, 36);
     [heartBtn setImage:[UIImage imageNamed:@"点赞"] forState:UIControlStateNormal];
     [heartBtn addTarget:self action:@selector(showTheLove:) forControlEvents:UIControlEventTouchUpInside];
     heartBtn.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -126,7 +124,7 @@
     
     //礼物
     UIButton *giftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    giftBtn.frame = CGRectMake(XJScreenW - 50, XJScreenH - 36 - 10, 36, 36);
+    giftBtn.frame = CGRectMake(XJScreenW - 50, XJScreenH - 36 - 100, 36, 36);
     [giftBtn setImage:[UIImage imageNamed:@"gift"] forState:UIControlStateNormal];
     [giftBtn addTarget:self action:@selector(showMyPorsche918) forControlEvents:UIControlEventTouchUpInside];
     giftBtn.layer.shadowColor = [UIColor blackColor].CGColor;
