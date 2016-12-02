@@ -38,8 +38,9 @@
     _addressMulArray = [NSMutableArray new];
     NSString *devCode  = [ [[[UIDevice currentDevice] identifierForVendor] UUIDString] substringToIndex:3];
     NSString *streamSrv  = @"rtmp://test.uplive.ksyun.com/live";
-    NSString *streamUrl      = [ NSString stringWithFormat:@"%@/%@", streamSrv, devCode];
-    NSString *playUrl  = @"rtmp://live.hkstv.hk.lxdns.com/live/hks";
+    NSString *streamUrl      = @"rtmp://gllovelivevideotest1.uplive.ks-cdn.com/live/LIVEKJ158BEE29531?vdoid=1480671270";
+    //[ NSString stringWithFormat:@"%@/%@", streamSrv, devCode];
+    NSString *playUrl  = @"http://gllovelivevideotest1.hlslive.ks-cdn.com/live/LIVEKJ158BEE29531/index.m3u8";
     NSString *recordFile = @"RecordAv.mp4";
     [_addressMulArray addObject:streamUrl];
     [_addressMulArray addObject:playUrl];
